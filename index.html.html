@@ -1,0 +1,423 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>中原食品三峽廠大事誌</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+/* 版面：左側年份欄、中央一條脊線、右側事件卡；窄螢幕時年份移到卡片上方 */
+:root {
+  --bg: #F1F5EE;
+  --surface: #FFFFFF;
+  --fg: #17261E;
+  --muted: #56665C;
+  --line: #CDD8CA;
+  --accent: #2B7549;
+  --c-company: #2B7549;
+  --c-sanxia: #1F6F8B;
+  --c-cert: #9A6A12;
+  --c-farm: #B3432B;
+  --c-person: #7C4C9C;
+  --font-display: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1913; --surface: #16241B; --fg: #E4EDE5; --muted: #9AAE9F; --line: #29392E; --accent: #6FC48E;
+    --c-company: #6FC48E; --c-sanxia: #6DB7D3; --c-cert: #E0B65C; --c-farm: #EE8D77; --c-person: #C49BE0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1913; --surface: #16241B; --fg: #E4EDE5; --muted: #9AAE9F; --line: #29392E; --accent: #6FC48E;
+  --c-company: #6FC48E; --c-sanxia: #6DB7D3; --c-cert: #E0B65C; --c-farm: #EE8D77; --c-person: #C49BE0;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 60rem; margin-inline: auto; }
+
+/* 標題區 */
+.eyebrow { font-size: .8rem; letter-spacing: .12em; color: var(--accent); font-weight: 700; margin: 0 0 .5rem; }
+h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.25; margin: 0 0 .75rem; text-wrap: balance; }
+.lead { max-width: 38em; margin: 0 0 1.75rem; color: var(--muted); }
+
+/* 控制列 */
+.controls { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; justify-content: space-between; margin-bottom: .75rem; }
+.group { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.group-label { font-size: .8rem; color: var(--muted); margin-right: .25rem; }
+.chip {
+  font: inherit; font-size: .88rem; line-height: 1;
+  padding: .55rem .9rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chip:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.count { font-size: .82rem; color: var(--muted); margin: 0 0 1.5rem; font-variant-numeric: tabular-nums; }
+
+/* 時間軸 */
+.tl { list-style: none; margin: 0; padding: 0; position: relative; }
+.tl::before {
+  content: ""; position: absolute; top: 1rem; bottom: 1rem; width: 2px; background: var(--line);
+  left: calc(9rem + .75rem + .875rem - 1px);
+}
+.ev {
+  display: grid; grid-template-columns: 9rem 1.75rem minmax(0, 1fr); column-gap: .75rem;
+  padding-bottom: 1.5rem; --c: var(--c-company);
+}
+.ev.p-sanxia { --c: var(--c-sanxia); }
+.ev.p-cert { --c: var(--c-cert); }
+.ev.p-farm { --c: var(--c-farm); }
+.ev.p-person { --c: var(--c-person); }
+
+.yr { display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding-top: .7rem; font-variant-numeric: tabular-nums; }
+.yr .a, .yr .r { display: block; }
+.yr .big { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; line-height: 1.25; color: var(--fg); }
+.yr .sm { font-size: .8rem; color: var(--muted); line-height: 1.4; }
+[data-era="roc"] .yr .r { order: -1; }
+.yr .md { font-size: .78rem; color: var(--muted); margin-top: .15rem; }
+
+.rail { display: flex; justify-content: center; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 4px var(--bg); margin-top: 1rem; position: relative; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.15rem 1.05rem; min-width: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .35rem; }
+.tag {
+  font-size: .75rem; letter-spacing: .06em; line-height: 1; padding: .3rem .55rem; border-radius: 4px; font-weight: 500;
+  color: var(--tc, var(--c)); background: color-mix(in srgb, var(--tc, var(--c)) 13%, transparent);
+}
+.tag.t-company { --tc: var(--c-company); }
+.tag.t-sanxia { --tc: var(--c-sanxia); }
+.tag.t-cert { --tc: var(--c-cert); }
+.tag.t-farm { --tc: var(--c-farm); }
+.tag.t-person { --tc: var(--c-person); }
+.card h3 { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.4; margin: 0 0 .4rem; text-wrap: balance; }
+.card p { margin: 0 0 .6rem; max-width: 38em; }
+.src { font-size: .8rem; color: var(--muted); margin: 0; display: flex; flex-wrap: wrap; gap: .4rem; align-items: baseline; }
+.kind { border: 1px solid var(--line); border-radius: 4px; padding: 0 .35rem; font-size: .72rem; color: var(--fg); }
+details { margin: 0 0 .7rem; }
+summary { cursor: pointer; color: var(--accent); font-size: .88rem; font-weight: 500; }
+details p { margin: .5rem 0 0; font-size: .92rem; color: var(--muted); }
+
+/* 區塊 */
+h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 3rem 0 .5rem; }
+.sub { color: var(--muted); max-width: 38em; margin: 0 0 1rem; }
+.undated { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.undated li { border: 1px dashed var(--line); border-radius: 10px; padding: .85rem 1.1rem; background: var(--surface); }
+.undated strong { display: block; font-family: var(--font-display); margin-bottom: .15rem; }
+.undated span { color: var(--muted); font-size: .94rem; }
+.sources { margin: 0; padding-left: 1.2rem; display: grid; gap: .3rem; }
+.sources a { color: var(--accent); overflow-wrap: anywhere; }
+.note { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .85rem; color: var(--muted); max-width: 44em; }
+
+/* 手機 */
+@media (max-width: 640px) {
+  .tl::before { left: calc(.75rem - 1px); top: .5rem; }
+  .ev { grid-template-columns: 1.5rem minmax(0, 1fr); column-gap: .5rem; }
+  .yr { grid-column: 2; grid-row: 1; flex-direction: row; flex-wrap: wrap; align-items: baseline; text-align: left; gap: .1rem .6rem; padding-top: 0; padding-bottom: .4rem; }
+  .yr .md { margin-top: 0; }
+  .rail { grid-column: 1; grid-row: 1 / span 2; }
+  .dot { margin-top: .5rem; }
+  .card { grid-column: 2; grid-row: 2; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chip { transition: background-color .15s, color .15s; }
+}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">公開資料整理</p>
+  <h1>中原食品三峽廠大事誌</h1>
+
+  <div class="controls">
+    <div class="group" role="group" aria-label="事件類別">
+      <span class="group-label">類別</span>
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">全部</button>
+      <button type="button" class="chip" data-filter="sanxia" aria-pressed="false">三峽廠</button>
+      <button type="button" class="chip" data-filter="company" aria-pressed="false">公司</button>
+      <button type="button" class="chip" data-filter="cert" aria-pressed="false">認證與品質</button>
+      <button type="button" class="chip" data-filter="farm" aria-pressed="false">農場與供應鏈</button>
+      <button type="button" class="chip" data-filter="person" aria-pressed="false">個人</button>
+    </div>
+    <div class="group" role="group" aria-label="年份顯示">
+      <span class="group-label">年份</span>
+      <button type="button" class="chip" data-era-btn="ad" aria-pressed="true">西元</button>
+      <button type="button" class="chip" data-era-btn="roc" aria-pressed="false">民國</button>
+    </div>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+
+  <ol class="tl" id="tl" data-era="ad">
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">1970s</span><span class="r sm">民國 60 年代</span><span class="md">約略年代</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>從台北果菜批發起步，第一張訂單是 1,000 顆番茄</h3>
+        <p>負責人董晃銘家族原在台北中央市場做果菜批發。退伍後的他親自到台北師院跑業務，第一張訂單的番茄大小不一，被對方退貨，他隨即重送了一批。靠著重視服務與信譽的做法，品項從蔬果逐步擴及肉品等其他生鮮食材。</p>
+      </article>
+    </li>
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">1981</span><span class="r sm">民國 70 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>率先提供整合配銷服務</h3>
+        <p>自民國 70 年起，中原率先推出整合配銷服務，報導稱其為國內第一家整合配銷業者。</p>
+      </article>
+    </li>
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">1987</span><span class="r sm">民國 76 年</span><span class="md">9 月 18 日</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>中原食品工業開發股份有限公司設立</h3>
+        <p>公司登記設立日為 1987 年 9 月 18 日，負責人董晃銘。目前登記資本額為新台幣 3,000 萬元。</p>
+      </article>
+    </li>
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">1988</span><span class="r sm">民國 77 年</span><span class="md">3 月 5 日</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>台北艋舺廠完成工廠登記</h3>
+        <p>位於台北市萬華區艋舺大道 275 巷的工廠，於 1988 年 3 月 5 日核准登記，目前仍列為生產中。</p>
+      </article>
+    </li>
+
+    <li class="ev p-sanxia" data-cat="sanxia cert">
+      <div class="yr"><span class="a big">2003</span><span class="r sm">民國 92 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-sanxia">三峽廠</span><span class="tag t-cert">認證與品質</span></div>
+        <h3>三峽落成 HACCP 驗證中央廚房</h3>
+        <p>2003 年，通過 HACCP 驗證的中央廚房在三峽落成。</p>
+      </article>
+    </li>
+
+    <li class="ev p-person" data-cat="person cert">
+      <div class="yr"><span class="a big">2003</span><span class="r sm">民國 92 年</span><span class="md">9 月 21 日</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-person">個人</span><span class="tag t-cert">認證與品質</span></div>
+        <h3>負責人董晃銘當選 HACCP 協會創會理事長</h3>
+        <p>社團法人中華食品安全管制系統發展協會於 2003 年 9 月 21 日成立，負責人董晃銘當選創會理事長。</p>
+      </article>
+    </li>
+
+    <li class="ev p-sanxia" data-cat="sanxia cert">
+      <div class="yr"><span class="a big">2007</span><span class="r sm">民國 96 年</span><span class="md">報導年份</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-sanxia">三峽廠</span><span class="tag t-cert">認證與品質</span></div>
+        <h3>三峽蔬果截切廠與物流中心運作，取得多項認證</h3>
+        <p>《豐年》雜誌報導，中原設有中央廚房，並在台北縣三峽鎮設立蔬果截切廠與物流中心，相關廠房與食品取得 CAS、GMP、HACCP、ISO 9002 認證。</p>
+      </article>
+    </li>
+
+    <li class="ev p-farm" data-cat="farm company">
+      <div class="yr"><span class="a big">2008</span><span class="r sm">民國 97 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-farm">農場與供應鏈</span></div>
+        <h3>關連公司白雞食品成立</h3>
+        <p>隨著通路對蔬果包裝與加工的需求增加而成立。初期串接南部產地與北區通路的分裝作業，後來從小型簡易包裝延伸到自動包裝與電子檢貨系統，並逐步轉向產銷履歷與有機，同時保有自營車隊。</p>
+      </article>
+    </li>
+
+    <li class="ev p-cert" data-cat="cert">
+      <div class="yr"><span class="a big">2012</span><span class="r sm">民國 101 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-cert">認證與品質</span></div>
+        <h3>取得 ISO 22000 食品安全管理系統驗證</h3>
+        <p>2012 年取得 ISO 22000 驗證，驗證機構為環球。</p>
+      </article>
+    </li>
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">2012</span><span class="r sm">民國 101 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>拜訪日本截切沙拉大廠旭物產，進行交流</h3>
+        <p>2012 年，拜訪日本截切沙拉大廠旭物產，進行業務與技術交流。</p>
+      </article>
+    </li>
+
+    <li class="ev p-farm" data-cat="farm">
+      <div class="yr"><span class="a big">2013</span><span class="r sm">民國 102 年</span><span class="md">1 月</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-farm">農場與供應鏈</span></div>
+        <h3>成立中原光合農場</h3>
+        <p>為了把品質管理延伸到產地，成立中原光合農場股份有限公司。初期先輔導農民（高麗菜、彩椒、柳丁）取得產銷履歷認證，之後陸續導入自營農場，種植小黃瓜、青江菜、小白菜、火龍果等。</p>
+      </article>
+    </li>
+
+    <li class="ev p-sanxia" data-cat="sanxia">
+      <div class="yr"><span class="a big">2014</span><span class="r sm">民國 103 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-sanxia">三峽廠</span></div>
+        <h3>成立三峽觀光暨農產品文化館</h3>
+        <p>以食安教育為出發點，提供 DIY 課程與工廠蔬果製品體驗，採預約制，2 樓設有示範開心農場。</p>
+      </article>
+    </li>
+
+    <li class="ev p-cert" data-cat="cert farm">
+      <div class="yr"><span class="a big">2014</span><span class="r sm">民國 103 年</span><span class="md">8 月</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-cert">認證與品質</span><span class="tag t-farm">農場與供應鏈</span></div>
+        <h3>負責人董晃銘獲「產銷履歷達人」</h3>
+        <p>負責人董晃銘於 2014 年 8 月獲頒產銷履歷達人。</p>
+      </article>
+    </li>
+
+    <li class="ev p-farm" data-cat="farm">
+      <div class="yr"><span class="a big">2017</span><span class="r sm">民國 106 年</span><span class="md">6 月底完工</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-farm">農場與供應鏈</span></div>
+        <h3>嘉義六腳蔬果加工廠完工</h3>
+        <p>2016 年底在嘉義六腳的產地動工，2017 年 6 月底完工，目標是透過自營物流，更有效率地把新鮮食材送到消費者手上。</p>
+      </article>
+    </li>
+
+    <li class="ev p-cert" data-cat="cert farm">
+      <div class="yr"><span class="a big">2019</span><span class="r sm">民國 108 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-cert">認證與品質</span><span class="tag t-farm">農場與供應鏈</span></div>
+        <h3>中原光合取得清真認證</h3>
+        <p>2019 年，中原光合農場取得清真（Halal）認證。</p>
+      </article>
+    </li>
+
+    <li class="ev p-person" data-cat="person cert">
+      <div class="yr"><span class="a big">2021</span><span class="r sm">民國 110 年</span><span class="md">11 月（官網發文）</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-person">個人</span><span class="tag t-cert">認證與品質</span></div>
+        <h3>負責人董晃銘獲食品安全貢獻獎</h3>
+        <p>中華食品安全管制系統發展協會表彰負責人董晃銘對食品安全發展與進步的貢獻。</p>
+      </article>
+    </li>
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">2022</span><span class="r sm">民國 111 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>糖葫蘆榮獲新味食潮獎</h3>
+        <p>2022 年，糖葫蘆產品獲得新味食潮獎。</p>
+      </article>
+    </li>
+
+    <li class="ev p-cert" data-cat="cert">
+      <div class="yr"><span class="a big">2023</span><span class="r sm">民國 112 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-cert">認證與品質</span></div>
+        <h3>通過 ISO 45001 驗證</h3>
+        <p>2023 年通過 ISO 45001 職業安全衛生管理系統驗證。</p>
+      </article>
+    </li>
+
+    <li class="ev p-company" data-cat="company">
+      <div class="yr"><span class="a big">2024</span><span class="r sm">民國 113 年</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-company">公司</span></div>
+        <h3>日本 frux 集團黑田社長來訪</h3>
+        <p>2024 年，日本 frux 集團的黑田社長到訪中原食品。</p>
+      </article>
+    </li>
+
+    <li class="ev p-sanxia" data-cat="sanxia">
+      <div class="yr"><span class="a big">2026</span><span class="r sm">民國 115 年</span><span class="md">6 月</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-sanxia">三峽廠</span></div>
+        <h3>三峽三廠取得工廠登記</h3>
+        <p>2026 年 6 月，三峽三廠（白雞 53 之 5 號）完成工廠登記。</p>
+      </article>
+    </li>
+
+    <li class="ev p-person" data-cat="person">
+      <div class="yr"><span class="a big">2026</span><span class="r sm">民國 115 年</span><span class="md">8 月</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-person">個人</span></div>
+        <h3>總經理董林麗雪獲新北市女力獎項</h3>
+        <p>2026 年 8 月，總經理董林麗雪在新北企業精典獎中，獲頒新北市女力獎項。</p>
+      </article>
+    </li>
+
+    <li class="ev p-cert" data-cat="cert">
+      <div class="yr"><span class="a big">2026</span><span class="r sm">民國 115 年</span><span class="md">9 月</span></div>
+      <div class="rail"><i class="dot"></i></div>
+      <article class="card">
+        <div class="tags"><span class="tag t-cert">認證與品質</span></div>
+        <h3>取得 ISO 14067 產品碳足跡認證</h3>
+        <p>2026 年 9 月取得 ISO 14067，這是產品碳足跡的國際標準，讓減碳數字有可對外說明的計算依據。</p>
+      </article>
+    </li>
+
+  </ol>
+
+</div>
+
+<script>
+(function () {
+  var tl = document.getElementById('tl');
+  var items = [].slice.call(tl.querySelectorAll('.ev'));
+  var count = document.getElementById('count');
+  var chips = [].slice.call(document.querySelectorAll('[data-filter]'));
+  var eras = [].slice.call(document.querySelectorAll('[data-era-btn]'));
+
+  function apply(f) {
+    var n = 0;
+    items.forEach(function (li) {
+      var cats = ' ' + li.getAttribute('data-cat') + ' ';
+      var show = f === 'all' || cats.indexOf(' ' + f + ' ') > -1;
+      li.hidden = !show;
+      if (show) n++;
+    });
+    count.textContent = '顯示 ' + n + ' / ' + items.length + ' 筆事件';
+    chips.forEach(function (c) {
+      c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === f));
+    });
+  }
+
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () { apply(c.getAttribute('data-filter')); });
+  });
+  eras.forEach(function (e) {
+    e.addEventListener('click', function () {
+      var v = e.getAttribute('data-era-btn');
+      tl.setAttribute('data-era', v);
+      eras.forEach(function (x) {
+        x.setAttribute('aria-pressed', String(x.getAttribute('data-era-btn') === v));
+      });
+    });
+  });
+  apply('all');
+})();
+</script>
+
+</body></html>
